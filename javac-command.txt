@@ -1,0 +1,1 @@
+rm -rf ../target/* && javac $(find ../src/* | grep .java) -d .
