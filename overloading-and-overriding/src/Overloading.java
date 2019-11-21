@@ -33,9 +33,12 @@ class Methods implements InterfaceA, InterfaceB {
     final public void show(String text, int number){
         System.out.println("Return: void, Args: String, int.");
     }
+
+    // Abstract interface method always should be overridden in classes which implements interface with abstract method declaration
+    public String getSomeString(){
+        return "Some String.";
+    }
     
-
-
     // Overridden method to make program compile - because of multiple interface implementation which the same method "print" with same method signature 
     public void print(){
         System.out.println("Hello!");
@@ -46,6 +49,8 @@ class Methods implements InterfaceA, InterfaceB {
 // Multiple inheritance based on Java 8 features.
 interface InterfaceA {
 
+    String getSomeString();
+
     default void print(){
         System.out.println("Hello InterfaceA!");
     }
@@ -54,6 +59,8 @@ interface InterfaceA {
 
 
 interface InterfaceB {
+
+    String getSomeString();
 
     default void print(){
         System.out.println("Hello InterfaceB!");
